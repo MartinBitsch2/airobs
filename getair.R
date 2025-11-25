@@ -4,10 +4,12 @@ library(DBI)
 library(dplyr)
 library(RMariaDB)
 library(logr)
+library(jsonlite)
 
 #skriv i logfil
 path <- Sys.getenv("HOME")
-log_open(path, file_name = "test.log")
+logfilename <- paste0(path, "/log/log_", as.integer(Sys.time()))
+log_open(logfilename)
 log_print("Starting")
 
 
